@@ -12,7 +12,7 @@ export const LeftDrawer = () => {
   };
 
   return (
-    <nav className="bg-blue-300" style={{ width: "20%" }}>
+    <nav className="fixed w-2/10 h-full left-0 top-0 bg-blue-300 ">
       <div className="w-11/12 h-96 rounded-lg bg-gray-200 mx-auto my-8">
         <div className="font-bold text-gray-700 p-2">お面を検索</div>
         <div className="px-2">
