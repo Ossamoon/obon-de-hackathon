@@ -1,12 +1,16 @@
 import { useState } from "react";
-    
+import { getAllOmenData } from "../../lig/getAllOmenData";
+
 export const LeftDrawer = () => {
   const [words, setWords] = useState("");
 
   const onSubmit = () => {
     console.log(words);
+    getAllOmenData().then((data) => {
+      console.log(JSON.stringify(data));
+    });
   };
-  
+
   return (
     <nav className="bg-blue-300" style={{ width: "20%" }}>
       <div className="w-11/12 h-96 rounded-lg bg-gray-200 mx-auto my-8">
@@ -29,7 +33,7 @@ export const LeftDrawer = () => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default LeftDrawer
+export default LeftDrawer;
