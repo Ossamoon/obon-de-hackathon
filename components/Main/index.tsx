@@ -145,7 +145,7 @@ export const Main = ({ omens, isOverlay, setIsOverlay, selectOmenIndex, setSelec
         <OmenModal
           omen={omens[selectOmenIndex]}
           onPrint={() => {
-            console.log("Print")
+            window.print()
           }}
           onClose={() => {
             setIsOverlay(false)
