@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default ({mask}) => {
+export const RightDrawer = ({omens}) => {
   const [manUrl, womanUrl, omeUrl] = [
     "https://1.bp.blogspot.com/-jlZlCg-8FAM/Xub_u8HTD1I/AAAAAAABZis/ZhUI05AZBEQpVinedZ6Xy-eIucmNuY2SQCNcBGAsYHQ/s1600/pose_pien_uruuru_man.png",
     "https://1.bp.blogspot.com/-ZOg0qAG4ewU/Xub_uw6q0DI/AAAAAAABZio/MshyuVBpHUgaOKJtL47LmVkCf5Vge6MQQCNcBGAsYHQ/s1600/pose_pien_uruuru_woman.png",
@@ -38,3 +38,5 @@ export default ({mask}) => {
     </nav>
   );
 }
+
+export default RightDrawer
