@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { getAllOmenData } from "../../lig/getAllOmenData";
+import { getAllOmenData } from "../../lib/getAllOmenData";
 
 export const LeftDrawer = () => {
   const [words, setWords] = useState("");
