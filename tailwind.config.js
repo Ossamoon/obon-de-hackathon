@@ -14,7 +14,10 @@ module.exports = {
         '8/10': '80%',
         '9/10': '90%',
       }
-    }
+    },
+    screens: {
+      'print': {'raw': 'print'},
+    },
   },
   variants: {
     extend: {
