@@ -1,17 +1,37 @@
 import { Omen } from "../../interfaces/omen"
 
-interface Props {
-  omens: Omen[]
+interface OmenCardProps {
+  src: string
 }
 
-export const Main = ({ omens }: Props) => {
+const OmenCard = ({ src }: OmenCardProps) => {
   return (
-    <nav className="bg-red-300 flex-grow ">
+    <>
+      <button className="
+        bg-gray-100 hover:bg-gray-400 focus:bg-gray-400 
+        border-4 border-opacity-0 focus:border-opacity-100
+        border-blue-500  
+        rounded-xl m-2 
+      ">
+        <span>
+          <img src={src} alt="" className="  max-h-40" />
+        </span>
+      </button>
+    </>
+  )
+}
+
+interface Props {
+  omens: Omen[]
+  setIsOverlay: (value: boolean) => void
+}
+
+export const Main = ({ omens, setIsOverlay }: Props) => {
+  return (
+    <nav className="bg-white flex-grow ">
       <div className="flex max-w-2xl flex-wrap">
         {[...omens, ...omens].map((omen, i) => (
-          <div key={`img-${i}`} >
-            <img src={omen.src} alt="" className="max-h-32" />
-          </div>
+          <OmenCard src={omen.src} key={i} />
         ))}
       </div>
     </nav>
