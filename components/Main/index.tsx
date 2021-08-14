@@ -61,37 +61,39 @@ interface OmenModalProps {
 
 const OmenModal = ({ omen, onPrint, onClose }: OmenModalProps) => {
   return (
-    <div className="absolute top-1/2 transform -translate-y-1/2 w-full bg-white z-10">
-      <div className="flex w-full justify-between">
-        <div className="w-6/10 bg-white">
-          <img src={omen.src} alt="" className="w-full" />
-        </div>
-        <div className="flex flex-col justify-between flex-grow bg-gray-200">
-          <div>
-            <span className="ml-2 text-3xl">Test-Title</span><br />
-
-            <span className="ml-2 text-xl">#Tag1</span><br />
-            <span className="ml-2 text-xl">#Tag2</span><br />
-            <span className="ml-2 text-xl">#Tag3</span><br />
+    <div className="absolute flex w-screen h-screen top-0 left-0">
+      <div className="flex w-full h-full ml-2/10 mr-3/10 items-center">
+        <div className="flex w-full justify-between z-10">
+          <div className="w-6/10 bg-white">
+            <img src={omen.src} alt="" className="w-full" />
           </div>
-
-          <div className="flex justify-center">
+          <div className="flex flex-col justify-between flex-grow bg-gray-200">
             <div>
-              <button
-                className="bg-green-200 hover:bg-green-300 m-2 px-12 py-1 text-lg rounded"
-                onClick={onPrint}
-              >
-                Print
-              </button>
+              <span className="ml-2 text-3xl">Test-Title</span><br />
+
+              <span className="ml-2 text-xl">#Tag1</span><br />
+              <span className="ml-2 text-xl">#Tag2</span><br />
+              <span className="ml-2 text-xl">#Tag3</span><br />
             </div>
 
-            <div>
-              <button
-                className="bg-red-200 hover:bg-red-300 m-2 px-4 py-1 text-lg rounded"
-                onClick={onClose}
-              >
-                Close
-              </button>
+            <div className="flex justify-center">
+              <div>
+                <button
+                  className="bg-green-200 hover:bg-green-300 m-2 px-12 py-1 text-lg rounded"
+                  onClick={onPrint}
+                >
+                  Print
+                </button>
+              </div>
+
+              <div>
+                <button
+                  className="bg-red-200 hover:bg-red-300 m-2 px-4 py-1 text-lg rounded"
+                  onClick={onClose}
+                >
+                  Close
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -108,7 +110,7 @@ interface Props {
   setSelectOmenIndex: (value: number) => void
 }
 
-export const Main = ({ omens, isOverlay, setIsOverlay, selectOmenIndex, setSelectOmenIndex  }: Props) => {
+export const Main = ({ omens, isOverlay, setIsOverlay, selectOmenIndex, setSelectOmenIndex }: Props) => {
   const [isModal, setIsModal] = useState<boolean>(false)
   const ref = useRef<HTMLDivElement>(null)
 
