@@ -1,7 +1,7 @@
 export const Page = () => {
   return (
     <div>
-      Welcom to Next.js!
+      Welcom to Next.js!!!!!!
     </div>
   )
 }
