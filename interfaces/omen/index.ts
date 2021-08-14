@@ -1,5 +1,6 @@
 export interface Omen {
-  name: string
-  src: string
-  tag: string[]
+  author: string;
+  name: string;
+  src: string;
+  tag: string[];
 }
