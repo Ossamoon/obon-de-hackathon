@@ -24,7 +24,7 @@ export const Page = () => {
 
   return (
     <>
-      <div className="w-screen h-screen relative block print:hidden">
+      <div className="w-full relative block print:hidden">
         <main className="h-full relative">
           <Main
             omens={omens}
@@ -43,7 +43,7 @@ export const Page = () => {
 
         {isOverlay && (
           <div
-            className="absolute w-full h-full bg-gray-900 opacity-50 top-0 left-0"
+            className="absolute w-screen h-screen bg-gray-900 opacity-50 top-0 left-0"
             onClick={() => setIsOverlay(false)}
           />
         )}
