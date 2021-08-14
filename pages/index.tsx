@@ -14,6 +14,7 @@ export const Page = () => {
 
         <Main
           omens={Omens}
+          setIsOverlay={setIsOverlay}
         />
 
         <RightDrawer
