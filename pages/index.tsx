@@ -1,10 +1,25 @@
-import { useState } from "react"
-import { Omens } from "../assets/omens"
+import { useEffect, useState } from "react"
 import LeftDrawer from "../components/LeftDrawer"
 import Main from "../components/Main"
 import RightDrawer from "../components/RightDrawer"
+import { Omen } from "../interfaces/omen"
+import { getAllOmenData } from "../lib/getAllOmenData"
+
+const useAllOmenData = () => {
+  const [omens, setOmens] = useState<Omen[]>([])
+
+  useEffect(() => {
+    getAllOmenData()
+      .then(omens =>  setOmens(omens))
+      .catch(console.error)
+  }, [])
+
+  return omens
+}
 
 export const Page = () => {
+  const omens = useAllOmenData()
+
   const [isOverlay, setIsOverlay] = useState<boolean>(false)
 
   return (
@@ -13,7 +28,7 @@ export const Page = () => {
         <LeftDrawer />
 
         <Main
-          omens={Omens}
+          omens={omens}
           isOverlay={isOverlay}
           setIsOverlay={setIsOverlay}
         />
