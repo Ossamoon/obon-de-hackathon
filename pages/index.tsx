@@ -8,7 +8,9 @@ export const Page = () => {
       <main className="flex h-full">
         <LeftDrawer />
         <Main />
-        <RightDrawer />
+        <RightDrawer
+          omens={[]}
+        />
       </main>
     </div>
   )
