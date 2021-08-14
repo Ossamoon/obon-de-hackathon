@@ -14,6 +14,7 @@ export const Page = () => {
 
         <Main
           omens={Omens}
+          isOverlay={isOverlay}
           setIsOverlay={setIsOverlay}
         />
 
@@ -23,7 +24,10 @@ export const Page = () => {
       </main>
 
       {isOverlay && (
-        <div className="absolute w-full h-full bg-gray-900 opacity-50 top-0 left-0"/>
+        <div
+          className="absolute w-full h-full bg-gray-900 opacity-50 top-0 left-0"
+          onClick={() => setIsOverlay(false)}
+        />
       )}
     </div>
   )
