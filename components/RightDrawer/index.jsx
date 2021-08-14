@@ -26,19 +26,19 @@ export const RightDrawer = ({ omens }) => {
         />
       </div>
 
-      <p>{radio}</p>
+ 
 
       {radio === 'man' ? (
-                <svg width="200" height="200"
+                <svg width="300" height="300"
                 xmlns="http://www.w3.org/2000/svg">
                   <image href={manUrl} height="100%" width="100%"/>
-                  <image href={omeUrl} height="140" width="100%"/>
+                  <image href={omeUrl} height="200" width="100%"/>
                 </svg>
       ) : (
-        <svg width="200" height="200"
+        <svg width="300" height="300"
         xmlns="http://www.w3.org/2000/svg">
           <image href={womanUrl} height="100%" width="100%"/>
-          <image href={omeUrl} height="140" width="100%"/>
+          <image href={omeUrl} height="200" width="100%"/>
         </svg>
       )}
 
