@@ -23,9 +23,10 @@ const OmenCard = ({ src }: OmenCardProps) => {
 
 interface Props {
   omens: Omen[]
+  setIsOverlay: (value: boolean) => void
 }
 
-export const Main = ({ omens }: Props) => {
+export const Main = ({ omens, setIsOverlay }: Props) => {
   return (
     <nav className="bg-white flex-grow ">
       <div className="flex max-w-2xl flex-wrap">
