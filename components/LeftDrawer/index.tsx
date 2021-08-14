@@ -1,12 +1,12 @@
 import { useState } from "react";
-
-export default () => {
+    
+export const LeftDrawer = () => {
   const [words, setWords] = useState("");
 
   const onSubmit = () => {
     console.log(words);
   };
-
+  
   return (
     <nav className="bg-blue-300" style={{ width: "20%" }}>
       <div className="w-11/12 h-96 rounded-lg bg-gray-200 mx-auto my-8">
@@ -29,5 +29,7 @@ export default () => {
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
+
+export default LeftDrawer
