@@ -1,12 +1,39 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Omen } from "../../interfaces/omen"
+
+const useDoubleClickHandler = (handlers: {
+  single?: React.MouseEventHandler,
+  double?: React.MouseEventHandler
+}) => {
+  const [flag, setFlag] = useState<boolean>(false)
+
+  const result: React.MouseEventHandler = (e) => {
+    if (flag) {
+      console.log("double click", flag)
+      handlers.double?.(e)
+      setFlag(false)
+    } else {
+      console.log("single click", flag)
+
+      handlers.single?.(e)
+      setFlag(true)
+      setTimeout(() => {
+        setFlag(false)
+      }, 500)
+    }
+  }
+
+  return result
+}
 
 interface OmenCardProps {
   src: string
-  onClick: React.MouseEventHandler<HTMLButtonElement>
+  onClick: React.MouseEventHandler
+  onFocus: React.FocusEventHandler
+  onBlur: React.FocusEventHandler
 }
 
-const OmenCard = ({ src, onClick }: OmenCardProps) => {
+const OmenCard = ({ src, onClick, onFocus, onBlur }: OmenCardProps) => {
   return (
     <>
       <button className="
@@ -14,7 +41,10 @@ const OmenCard = ({ src, onClick }: OmenCardProps) => {
         border-4 border-opacity-0 focus:border-opacity-100
         border-blue-500  
         rounded-xl m-2
-      " onClick={onClick}>
+      " onClick={useDoubleClickHandler({ double: onClick })}
+        onFocus={onFocus}
+        onBlur={onBlur}
+      >
         <span>
           <img src={src} alt="" className="max-h-40" />
         </span>
@@ -77,33 +107,47 @@ interface Props {
 }
 
 export const Main = ({ omens, isOverlay, setIsOverlay }: Props) => {
-  const [focusIndex, setFocusIndex] = useState(-1)
+  const [focusIndex, setFocusIndex] = useState<number>(-1)
+  const [isModal, setIsModal] = useState<boolean>(false)
+
+  const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (!isOverlay) {
-      setFocusIndex(-1)
+      setIsModal(false)
     }
   }, [isOverlay])
 
   return (
     <nav className="bg-white flex-grow relative">
-      <div className="flex max-w-2xl flex-wrap">
+      <div className="flex max-w-2xl flex-wrap" ref={ref}>
         {[...omens, ...omens].map((omen, i) => (
-          <OmenCard src={omen.src} key={i} onClick={() => {
-            setFocusIndex(i % 5)
-            setIsOverlay(true)
-          }} />
+          <OmenCard src={omen.src} key={i}
+            onClick={() => {
+              setIsModal(true)
+              setIsOverlay(true)
+            }}
+            onFocus={() => {
+              setFocusIndex(i % 5)
+            }}
+            onBlur={e => {
+              if (isModal) {
+                ref.current?.querySelectorAll("button")[focusIndex]?.focus()
+              } else {
+                setFocusIndex(-1)
+              }
+            }}
+          />
         ))}
       </div>
 
-      {0 <= focusIndex && (
+      {0 <= focusIndex && isModal && (
         <OmenModal
           omen={omens[focusIndex]}
           onPrint={() => {
             console.log("Print")
           }}
           onClose={() => {
-            setFocusIndex(-1)
             setIsOverlay(false)
           }}
         />
