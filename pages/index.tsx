@@ -10,7 +10,7 @@ const useAllOmenData = () => {
 
   useEffect(() => {
     getAllOmenData()
-      .then(omens =>  setOmens(omens))
+      .then(omens => setOmens(omens))
       .catch(console.error)
   }, [])
 
@@ -21,9 +21,10 @@ export const Page = () => {
   const omens = useAllOmenData()
 
   const [isOverlay, setIsOverlay] = useState<boolean>(false)
+  const [selectOmenIndex, setSelectOmenIndex] = useState<number>(-1)
 
   return (
-    <div className="w-screen h-screen relative">
+    <div className="w-screen h-screen relative block print:hidden">
       <main className="flex h-full">
         <LeftDrawer />
 
@@ -31,6 +32,8 @@ export const Page = () => {
           omens={omens}
           isOverlay={isOverlay}
           setIsOverlay={setIsOverlay}
+          selectOmenIndex={selectOmenIndex}
+          setSelectOmenIndex={setSelectOmenIndex}
         />
 
         <RightDrawer

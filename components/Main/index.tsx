@@ -104,12 +104,12 @@ interface Props {
   omens: Omen[]
   isOverlay: boolean
   setIsOverlay: (value: boolean) => void
+  selectOmenIndex: number
+  setSelectOmenIndex: (value: number) => void
 }
 
-export const Main = ({ omens, isOverlay, setIsOverlay }: Props) => {
-  const [focusIndex, setFocusIndex] = useState<number>(-1)
+export const Main = ({ omens, isOverlay, setIsOverlay, selectOmenIndex, setSelectOmenIndex  }: Props) => {
   const [isModal, setIsModal] = useState<boolean>(false)
-
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -128,22 +128,22 @@ export const Main = ({ omens, isOverlay, setIsOverlay }: Props) => {
               setIsOverlay(true)
             }}
             onFocus={() => {
-              setFocusIndex(i % 5)
+              setSelectOmenIndex(i % 5)
             }}
             onBlur={e => {
               if (isModal) {
-                ref.current?.querySelectorAll("button")[focusIndex]?.focus()
+                ref.current?.querySelectorAll("button")[selectOmenIndex]?.focus()
               } else {
-                setFocusIndex(-1)
+                setSelectOmenIndex(-1)
               }
             }}
           />
         ))}
       </div>
 
-      {0 <= focusIndex && isModal && (
+      {0 <= selectOmenIndex && isModal && (
         <OmenModal
-          omen={omens[focusIndex]}
+          omen={omens[selectOmenIndex]}
           onPrint={() => {
             console.log("Print")
           }}
