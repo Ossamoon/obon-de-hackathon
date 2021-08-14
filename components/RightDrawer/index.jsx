@@ -9,7 +9,7 @@ export const RightDrawer = ({ omens }) => {
 
   const [radio, setRadio] = useState('man');
   return (
-    <nav className="bg-blue-300" style={{ width: "30%" }}>
+    <nav className="fixed w-3/10 h-full right-0 top-0 bg-blue-300"> 
       <div>
         <label htmlFor="man">男:</label>
         <input type="radio" id="man" value="man"

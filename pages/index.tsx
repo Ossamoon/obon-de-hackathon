@@ -25,9 +25,7 @@ export const Page = () => {
   return (
     <>
       <div className="w-screen h-screen relative block print:hidden">
-        <main className="flex h-full">
-          <LeftDrawer />
-
+        <main className="h-full relative">
           <Main
             omens={omens}
             isOverlay={isOverlay}
@@ -35,6 +33,8 @@ export const Page = () => {
             selectOmenIndex={selectOmenIndex}
             setSelectOmenIndex={setSelectOmenIndex}
           />
+
+          <LeftDrawer />
 
           <RightDrawer
             omens={[]}

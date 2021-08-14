@@ -119,7 +119,7 @@ export const Main = ({ omens, isOverlay, setIsOverlay, selectOmenIndex, setSelec
   }, [isOverlay])
 
   return (
-    <nav className="bg-white flex-grow relative">
+    <nav className="relative pl-2/10 pr-3/10 bg-white">
       <div className="flex max-w-2xl flex-wrap" ref={ref}>
         {[...omens, ...omens].map((omen, i) => (
           <OmenCard src={omen.src} key={i}
