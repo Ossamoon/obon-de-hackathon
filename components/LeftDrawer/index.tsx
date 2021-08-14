@@ -2,12 +2,9 @@ import { useState } from "react";
 
 export default () => {
   const [words, setWords] = useState("");
+
   const onSubmit = () => {
     console.log(words);
-  };
-
-  const onChange = (e) => {
-    setWords(e.target.value);
   };
 
   return (
@@ -18,7 +15,9 @@ export default () => {
           <input
             type="text"
             value={words}
-            onChange={onChange}
+            onChange={(e) => {
+              setWords(e.target.value);
+            }}
             className="w-full bg-gray-50 rounded-md px-1"
           />
           <div
