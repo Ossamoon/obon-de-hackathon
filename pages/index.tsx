@@ -22,19 +22,24 @@ export const Page = () => {
   const [isOverlay, setIsOverlay] = useState<boolean>(false)
   const [selectOmenIndex, setSelectOmenIndex] = useState<number>(-1)
 
+  const [searchWord, setSearchWord] = useState<string>("")
+
   return (
     <>
       <div className="w-full relative block print:hidden">
         <main className="h-full relative">
           <Main
             omens={omens}
+            searchWord={searchWord}
             isOverlay={isOverlay}
             setIsOverlay={setIsOverlay}
             selectOmenIndex={selectOmenIndex}
             setSelectOmenIndex={setSelectOmenIndex}
           />
 
-          <LeftDrawer />
+          <LeftDrawer
+            onSubmit={setSearchWord}
+          />
 
           <RightDrawer
             omens={[]}

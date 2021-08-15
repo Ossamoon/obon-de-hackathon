@@ -104,13 +104,18 @@ const OmenModal = ({ omen, onPrint, onClose }: OmenModalProps) => {
 
 interface Props {
   omens: Omen[]
+  searchWord: string
   isOverlay: boolean
   setIsOverlay: (value: boolean) => void
   selectOmenIndex: number
   setSelectOmenIndex: (value: number) => void
 }
 
-export const Main = ({ omens, isOverlay, setIsOverlay, selectOmenIndex, setSelectOmenIndex }: Props) => {
+export const Main = ({
+  omens, searchWord,
+  isOverlay, setIsOverlay,
+  selectOmenIndex, setSelectOmenIndex
+}: Props) => {
   const [isModal, setIsModal] = useState<boolean>(false)
   const ref = useRef<HTMLDivElement>(null)
 
