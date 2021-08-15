@@ -14,7 +14,7 @@ export const RightDrawer = ({ omen }: RightDrawerProps) => {
   const [radio, setRadio] = useState<string>('man');
 
   return (
-    <nav className="bg-blue-300" style={{ width: "30%" }}>
+    <nav className="fixed w-3/10 h-full right-0 top-0 bg-blue-300">
       <select name="gender" onChange={(e) => setRadio(e.target.value)} className="relative left-2 top-2 block mt-1 rounded border-gray-300 shadow focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
         <option hidden>性別を選択してください</option>
         <option value="man">男性</option>
