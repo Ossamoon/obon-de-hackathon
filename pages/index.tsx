@@ -42,7 +42,7 @@ export const Page = () => {
           />
 
           <RightDrawer
-            omens={[]}
+            omen={omens[selectOmenIndex]}
           />
         </main>
 
