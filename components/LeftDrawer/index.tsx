@@ -1,7 +1,9 @@
 import { useState } from "react";
 
+import { Upload } from "./upload";
+
 interface LeftDrawerProps {
-  onSubmit: (words: string) => void
+  onSubmit: (words: string) => void;
 }
 
 export const LeftDrawer = ({ onSubmit }: LeftDrawerProps) => {
@@ -9,7 +11,7 @@ export const LeftDrawer = ({ onSubmit }: LeftDrawerProps) => {
 
   return (
     <nav className="fixed w-2/10 h-full left-0 top-0 bg-blue-300 ">
-      <div className="w-11/12 h-96 rounded-lg bg-gray-200 mx-auto my-8">
+      <div className="w-11/12 rounded-lg bg-gray-200 mx-auto my-8 pb-1">
         <div className="font-bold text-gray-700 p-2">お面を検索</div>
         <div className="px-2">
           <input
@@ -27,6 +29,9 @@ export const LeftDrawer = ({ onSubmit }: LeftDrawerProps) => {
             検索！
           </div>
         </div>
+      </div>
+      <div className="my-10">
+        <Upload />
       </div>
     </nav>
   );
