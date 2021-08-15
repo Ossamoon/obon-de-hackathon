@@ -37,7 +37,7 @@ const OmenCard = ({ src, onClick, onFocus, onBlur }: OmenCardProps) => {
   return (
     <>
       <button className="
-        bg-gray-100 hover:bg-gray-400 focus:bg-gray-400 
+        bg-yellow-100 hover:bg-white focus:bg-white
         border-4 border-opacity-0 focus:border-opacity-100
         border-blue-500  
         rounded-xl m-2
@@ -67,7 +67,7 @@ const OmenModal = ({ omen, onPrint, onClose }: OmenModalProps) => {
           <div className="w-6/10 bg-white">
             <img src={omen.src} alt="" className="w-full" />
           </div>
-          <div className="flex flex-col justify-between flex-grow bg-gray-200">
+          <div className="flex flex-col justify-between flex-grow bg-yellow-100">
             <div>
               <span className="ml-2 text-3xl">{omen.name}</span><br />
 
@@ -126,7 +126,7 @@ export const Main = ({
   }, [isOverlay])
 
   return (
-    <nav className="relative pl-2/10 pr-3/10 bg-white">
+    <div className="relative pl-3/10 pr-2/10 bg-yellow-100 min-h-screen">
       <div className="flex max-w-2xl flex-wrap" ref={ref}>
         {omens.filter(
           omen => searchWord ? omen.name.includes(searchWord) : true
@@ -161,7 +161,7 @@ export const Main = ({
           }}
         />
       )}
-    </nav>
+    </div>
   )
 }
 

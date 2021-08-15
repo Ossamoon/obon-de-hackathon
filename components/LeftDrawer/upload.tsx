@@ -15,7 +15,7 @@ export const Upload = () => {
   const router = useRouter();
 
   return (
-    <div className="w-11/12 h-96 rounded-lg bg-gray-300 mx-auto my-8">
+    <div className="w-11/12 h-96 rounded-lg bg-yellow-100 mx-auto my-8">
       <div className="font-bold text-gray-700 p-2">お面をアップロード</div>
       <div className="px-2">
         <input
@@ -33,7 +33,7 @@ export const Upload = () => {
           onChange={(e) => {
             setName(e.target.value);
           }}
-          className="w-full bg-gray-50 rounded-md px-1 mb-1"
+          className="w-full bg-gray-200 rounded-md px-1 mb-1"
         />
         <div>投稿者名</div>
         <input
@@ -42,7 +42,7 @@ export const Upload = () => {
           onChange={(e) => {
             setAuthor(e.target.value);
           }}
-          className="w-full bg-gray-50 rounded-md px-1 mb-1"
+          className="w-full bg-gray-200 rounded-md px-1 mb-1"
         />
         <div>タグ</div>
         <input
@@ -51,7 +51,7 @@ export const Upload = () => {
           onChange={(e) => {
             setTag1(e.target.value);
           }}
-          className="w-full bg-gray-50 rounded-md px-1 mb-1"
+          className="w-full bg-gray-200 rounded-md px-1 mb-1"
         />
         <input
           type="text"
@@ -59,7 +59,7 @@ export const Upload = () => {
           onChange={(e) => {
             setTag2(e.target.value);
           }}
-          className="w-full bg-gray-50 rounded-md px-1 mb-1"
+          className="w-full bg-gray-200 rounded-md px-1 mb-1"
         />
         <input
           type="text"
@@ -67,7 +67,7 @@ export const Upload = () => {
           onChange={(e) => {
             setTag3(e.target.value);
           }}
-          className="w-full bg-gray-50 rounded-md px-1 mb-1"
+          className="w-full bg-gray-200 rounded-md px-1 mb-1"
         />
         <input
           type="text"
@@ -75,7 +75,7 @@ export const Upload = () => {
           onChange={(e) => {
             setTag4(e.target.value);
           }}
-          className="w-full bg-gray-50 rounded-md px-1 mb-1"
+          className="w-full bg-gray-200 rounded-md px-1 mb-1"
         />
         <input
           type="text"
@@ -83,11 +83,11 @@ export const Upload = () => {
           onChange={(e) => {
             setTag5(e.target.value);
           }}
-          className="w-full bg-gray-50 rounded-md px-1 mb-1"
+          className="w-full bg-gray-200 rounded-md px-1 mb-1"
         />
 
         <div
-          className="w-16 text-center bg-blue-400 cursor-pointer my-2"
+          className="w-16 text-center text-white bg-yellow-800 hover:bg-yellow-900 cursor-pointer my-2"
           onClick={() => {
             if (file.current && name && author) {
               uploadOmen(file.current, name, author, [
