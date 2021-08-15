@@ -15,21 +15,25 @@ export const RightDrawer = ({ omen }: RightDrawerProps) => {
 
   return (
     <nav className="fixed w-3/10 h-full right-0 top-0 bg-blue-300">
-      <div>
-        <label htmlFor="man">男:</label>
-        <input type="radio" id="man" value="man"
-          onChange={() => setRadio('man')}
-          checked={radio === 'man'}
-        />
+            <div className="flex flex-row justify-center mt-8 text-xl">
+        <div className="mr-6">
+          <label htmlFor="man">男</label>
+          <input type="radio" id="man" value="man"
+            onChange={() => setRadio('man')}
+            checked={radio === 'man'}
+          />
+        </div>
+
+
+        <div>
+          <label htmlFor="woman">女</label>
+          <input type="radio" id="woman" value="woman"
+            onChange={() => setRadio('woman')}
+            checked={radio === 'woman'}
+          />
+        </div>
       </div>
 
-      <div>
-        <label htmlFor="woman">女:</label>
-        <input type="radio" id="woman" value="woman"
-          onChange={() => setRadio('woman')}
-          checked={radio === 'woman'}
-        />
-      </div>
 
       <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
         {radio === 'man' ? (
