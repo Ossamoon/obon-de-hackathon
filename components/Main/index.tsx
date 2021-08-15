@@ -69,11 +69,11 @@ const OmenModal = ({ omen, onPrint, onClose }: OmenModalProps) => {
           </div>
           <div className="flex flex-col justify-between flex-grow bg-gray-200">
             <div>
-              <span className="ml-2 text-3xl">Test-Title</span><br />
+              <span className="ml-2 text-3xl">{omen.name}</span><br />
 
-              <span className="ml-2 text-xl">#Tag1</span><br />
-              <span className="ml-2 text-xl">#Tag2</span><br />
-              <span className="ml-2 text-xl">#Tag3</span><br />
+              {omen.tag.map((tag, i) => (<>
+                <span className="ml-2 text-xl" key={i}>#{tag}</span><br />
+              </>))}
             </div>
 
             <div className="flex justify-center">
@@ -128,7 +128,9 @@ export const Main = ({
   return (
     <nav className="relative pl-2/10 pr-3/10 bg-white">
       <div className="flex max-w-2xl flex-wrap" ref={ref}>
-        {[...omens, ...omens].map((omen, i) => (
+        {omens.filter(
+          omen => searchWord ? omen.name.includes(searchWord) : true
+        ).map((omen, i) => (
           <OmenCard src={omen.src} key={i}
             onClick={() => {
               setIsModal(true)
