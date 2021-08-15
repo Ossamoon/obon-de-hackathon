@@ -29,7 +29,7 @@ export const RightDrawer = ({ omen }: RightDrawerProps) => {
         <option value="nogender">規定しない</option>
       </select>
 
-      <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+      <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" className="w-full">
         <image href={urls[radio]} height="100%" width="100%" />
 
         {omen && <image href={omen.src} height="200" width="100%" />}
