@@ -16,7 +16,7 @@ export const RightDrawer = ({ omen }: RightDrawerProps) => {
   const [radio, setRadio] = useState<keyof typeof urls>("man");
 
   return (
-    <nav className="fixed w-2/10 h-full right-0 top-0 bg-blue-300">
+    <nav className="fixed w-2/10 h-full right-0 top-0 bg-yellow-900">
       <select
         name="gender"
         onChange={(e) =>
