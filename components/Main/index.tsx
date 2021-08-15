@@ -9,12 +9,9 @@ const useDoubleClickHandler = (handlers: {
 
   const result: React.MouseEventHandler = (e) => {
     if (flag) {
-      console.log("double click", flag)
       handlers.double?.(e)
       setFlag(false)
     } else {
-      console.log("single click", flag)
-
       handlers.single?.(e)
       setFlag(true)
       setTimeout(() => {
