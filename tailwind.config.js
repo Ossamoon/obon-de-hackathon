@@ -13,10 +13,10 @@ module.exports = {
         '7/10': '70%',
         '8/10': '80%',
         '9/10': '90%',
-      }
-    },
-    screens: {
-      'print': {'raw': 'print'},
+      },
+      screens: {
+        'print': {'raw': 'print'},
+      },
     },
   },
   variants: {
