@@ -1,15 +1,11 @@
 import { useState } from "react";
-import { getAllOmenData } from "../../lib/getAllOmenData";
 
-export const LeftDrawer = () => {
+interface LeftDrawerProps {
+  onSubmit: (words: string) => void
+}
+
+export const LeftDrawer = ({ onSubmit }: LeftDrawerProps) => {
   const [words, setWords] = useState("");
-
-  const onSubmit = () => {
-    console.log(words);
-    getAllOmenData().then((data) => {
-      console.log(JSON.stringify(data));
-    });
-  };
 
   return (
     <nav className="fixed w-2/10 h-full left-0 top-0 bg-blue-300 ">
@@ -26,7 +22,7 @@ export const LeftDrawer = () => {
           />
           <div
             className="w-16 text-center bg-blue-400 cursor-pointer my-2"
-            onClick={onSubmit}
+            onClick={() => onSubmit(words)}
           >
             検索！
           </div>
