@@ -62,7 +62,7 @@ interface OmenModalProps {
 const OmenModal = ({ omen, onPrint, onClose }: OmenModalProps) => {
   return (
     <div className="absolute flex w-screen h-screen top-0 left-0">
-      <div className="flex w-full h-full ml-2/10 mr-3/10 items-center">
+      <div className="flex w-full h-full ml-3/10 mr-2/10 items-center">
         <div className="flex w-full justify-between z-10">
           <div className="w-6/10 bg-white">
             <img src={omen.src} alt="" className="w-full" />
@@ -126,7 +126,7 @@ export const Main = ({
   }, [isOverlay])
 
   return (
-    <nav className="relative pl-2/10 pr-3/10 bg-white">
+    <nav className="relative pl-3/10 pr-2/10 bg-white">
       <div className="flex max-w-2xl flex-wrap" ref={ref}>
         {omens.filter(
           omen => searchWord ? omen.name.includes(searchWord) : true
