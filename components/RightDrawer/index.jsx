@@ -1,17 +1,12 @@
 import { useState } from "react";
-import { Omen } from "../../interfaces/omen";
 
-interface RightDrawerProps {
-  omen: Omen
-}
-
-export const RightDrawer = ({ omen }: RightDrawerProps) => {
+export const RightDrawer = ({ omen }) => {
   const [manUrl, womanUrl] = [
     "https://1.bp.blogspot.com/-jlZlCg-8FAM/Xub_u8HTD1I/AAAAAAABZis/ZhUI05AZBEQpVinedZ6Xy-eIucmNuY2SQCNcBGAsYHQ/s1600/pose_pien_uruuru_man.png",
     "https://1.bp.blogspot.com/-ZOg0qAG4ewU/Xub_uw6q0DI/AAAAAAABZio/MshyuVBpHUgaOKJtL47LmVkCf5Vge6MQQCNcBGAsYHQ/s1600/pose_pien_uruuru_woman.png",
   ];
 
-  const [radio, setRadio] = useState<string>('man');
+  const [radio, setRadio] = useState('man');
 
   return (
     <nav className="fixed w-3/10 h-full right-0 top-0 bg-blue-300">
