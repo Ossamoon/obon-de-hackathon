@@ -137,7 +137,7 @@ export const Main = ({
               setIsOverlay(true)
             }}
             onFocus={() => {
-              setSelectOmenIndex(i % 5)
+              setSelectOmenIndex(i)
             }}
             onBlur={e => {
               if (isModal) {
